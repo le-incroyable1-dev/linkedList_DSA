@@ -16,6 +16,69 @@
 
 *****************************************************************/
 
+//RECURSIVE 
+
+Node *deleteNodeRec(Node *head, int pos) {
+	//Write your code here
+    
+    if(head == NULL)
+        return head;
+    else
+    {
+        if(pos < 0)
+            return head;
+        else if(pos == 0)
+        {
+            Node *temp = head;
+            head = head -> next;
+            delete temp;
+            return head;
+        }
+        else if(pos == 1)
+        {
+            Node *temp1 = head -> next;
+            
+            if(temp1 == NULL)
+                return head;
+            else
+            {
+                Node *temp2 = temp1 -> next;
+                
+                if(temp2 == NULL)
+                {
+                    delete temp1;
+                	head -> next = NULL;
+                	return head;
+                }
+                else
+                {
+            		head -> next = temp2;
+            		delete temp1;
+            		return head; 
+                }
+            }
+                            
+        }
+        else
+        {
+            Node *nxt = head -> next;
+            
+            if(nxt == NULL)
+                return head;
+            else
+            {
+            	Node *tempDo = deleteNodeRec(nxt, pos-1);
+            	return head;
+            }
+        }
+    }
+}
+
+
+
+
+//ITERATIVE
+
 Node *deleteNode(Node *head, int pos)
 {
     //Write your code here
