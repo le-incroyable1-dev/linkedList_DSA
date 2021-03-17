@@ -17,6 +17,7 @@ class Node{
 Node *takeInput()
 {
   Node *head = NULL;
+  Node *tail = NULL;
   
   int data;
   cin >> data;
@@ -27,17 +28,12 @@ Node *takeInput()
     if (head == NULL)
     {
       head = newNode;
+      tail = newNode;
     }
     else
     {
-      Node *temp = head;
-      
-      while(temp -> next != NULL)
-      {
-        temp = temp -> next;
-      }
-      
-      temp -> next = newNode;
+      tail -> next = newNode;
+      tail = newNode;
     }
     
     cin >> data;
