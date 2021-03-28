@@ -19,6 +19,7 @@
  
 //RECURSIVE ALGORITHM
 
+O(n)
 
 Node *reverseLinkedListRec(Node *head)
 {
