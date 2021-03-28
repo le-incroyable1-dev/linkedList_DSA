@@ -83,7 +83,7 @@ Pair revLL2(Node *head)
 
 
 //----------------------------------------------------------------------
-//RECURSIVE - ITERATIVE METHOD
+//ITERATIVE METHOD
 
 
 "O(n)"
