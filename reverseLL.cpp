@@ -80,3 +80,38 @@ Pair revLL2(Node *head)
 		return ans;
 	}
 }
+
+
+//----------------------------------------------------------------------
+//RECURSIVE - ITERATIVE METHOD
+
+
+"O(n)"
+
+Node *reverseLinkedList(Node *head) {
+    // Write your code here
+    if(head == NULL || head -> next == NULL)
+        return head;
+    else
+    {
+        Node *prev = NULL;
+        Node *cur = head;
+        Node *nxt = NULL;
+        
+        while(cur != NULL)
+        {
+            nxt = cur -> next;
+            
+            cur -> next = prev;
+            
+            prev = cur;
+            cur = nxt;
+        }
+        
+        return prev; 
+
+    }
+}
+
+
+	
